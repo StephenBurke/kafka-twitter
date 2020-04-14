@@ -1,0 +1,57 @@
+ Ignore all these generated or environment artifacts 
+# ending slash will ignore all target folders (not just in the root)
+target/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.log
+*.logs
+*.iml
+*.nar
+.idea
+.settings/
+.classpath
+.factorypath
+.project
+
+#BlueJ files
+*.ctxt
+
+#ignore twitter credentials file
+twitter4j.properties
+
+#Visual Studio settings files
+.vscode/
+
+# ignore all . folders
+.*/
+
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+.mvn/wrapper/maven-wrapper.jar
