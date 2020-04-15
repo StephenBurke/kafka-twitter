@@ -1,14 +1,17 @@
 package edu.nwmissouri.burke;
 
-/**
- * Hello world!
- *
- */
-public class Producer 
-{
-    public static void main( String[] args )
+import java.io.IOException;
+
+
+public class Producer {
+    /**
+     * Custom Producer using Kafka for messaging. Reads properties from the
+     * run.properties file in src/main/resources.
+     */
+
+
+    public static void main(String[] args) throws IOException
     {
-        System.out.println( "Hello World!" );
-        
+        System.out.println("hello world");
     }
 }

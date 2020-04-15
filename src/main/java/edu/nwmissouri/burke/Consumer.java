@@ -1,14 +1,16 @@
 package edu.nwmissouri.burke;
-
 /**
- * Hello world!
- *
+ * Custom Consumer using Kafka for messaging. 
+ * Reads properties from the run.properties file in 
+ * src/main/resources.
  */
+
 public class Consumer 
 {
+
+
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
-        
-    }
+        System.out.println("hello world");
+    }       
 }
