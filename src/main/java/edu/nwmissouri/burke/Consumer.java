@@ -71,7 +71,6 @@ public class Consumer
                 System.out.println("Exception caught " + ex.getMessage());
             }finally{
                 kafkaConsumer.close();
-                System.out.println("After closing KafkaConsumer");
             }
         }
         public KafkaConsumer<String,String> getKafkaConsumer(){

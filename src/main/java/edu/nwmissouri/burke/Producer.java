@@ -11,7 +11,7 @@ import twitter4j.TwitterFactory;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.io.IOException;
 
@@ -21,7 +21,7 @@ public class Producer {
      * run.properties file in src/main/resources.
      */
 
-    private static Scanner in;
+//    private static Scanner in;
 
     public static void main(String[] args) throws IOException, TwitterException
     {
@@ -32,7 +32,7 @@ public class Producer {
         }
         String topicName = args[0];
 
-        in = new Scanner(System.in);
+//        in = new Scanner(System.in);
         System.out.println("Enter message(type exit to quit)");
 
         //Configure the Producer
@@ -42,31 +42,14 @@ public class Producer {
         configProperties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,"org.apache.kafka.common.serialization.StringSerializer");
 
         org.apache.kafka.clients.producer.Producer producer = new KafkaProducer(configProperties);
-//        for (int i = 1; i <= 10; i++) 
-//        {
-//            String message = createSentence();
-//            ProducerRecord<String, String> rec = new ProducerRecord<String, String>(topicName, message);
-//            producer.send(rec);
-//        }
 
-
-//        String line = in.nextLine();
-//        while(!line.equals("exit")) 
-//        {
-//            //TODO: Make sure to use the ProducerRecord constructor that does not take parition Id
-//            ProducerRecord<String, String> rec = new ProducerRecord<String, String>(topicName,line);
-//            producer.send(rec);
-//           line = in.nextLine();
-//        }
-//        in.close();
-//        producer.close();
 
         // The factory instance is re-useable and thread safe.
         Twitter twitter = TwitterFactory.getSingleton();
         List<Status> statuses = twitter.getHomeTimeline();
         System.out.println("Showing home timeline.");
         for (Status status : statuses) {
-            String tweet = status.getUser().getName() + " : " + status.getText();
+            String tweet = status.getUser().getName() + " : " + status.getText() + "\n";
             ProducerRecord<String, String> rec = new ProducerRecord<String, String>(topicName, tweet);
             producer.send(rec);
  
@@ -75,10 +58,6 @@ public class Producer {
         producer.close();     
     }
 
-//    private static String createSentence()
-//    {
-//        return "Noun verb subject.";
-//    }
 
     public List<String> getTimeLine() throws TwitterException 
     {
